@@ -8,7 +8,7 @@ Requirements for running install script:
 - *linux* (with systemd and root access)
 - docker
 - docker-compose
-´´´
+```
 
 Future implementations:
 ```
