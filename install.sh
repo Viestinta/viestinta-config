@@ -2,6 +2,7 @@
 
 # Set constants
 GIT_REPO="https://github.com/Viestinta/viestinta.git"
+GIT_PROD_BRANCH=master
 GIT_DEV_BRANCH=develop
 SCRIPT_DIR=$PWD
 GIT_DIR=/git
@@ -20,12 +21,11 @@ mkdir -v $DEV_DIR
 
 # Clone GitHub repo to prod directory
 cd $PROD_DIR
-git clone $GIT_REPO
+git clone -b $GIT_PROD_BRANCH $GIT_REPO
 
 # Clone GitHub repo to prod directory
 cd $DEV_DIR
-git clone $GIT_REPO
-git checkout $GIT_DEV_BRANCH
+git clone -b $GIT_DEV_BRANCH $GIT_REPO
 
 # Return to script directory
 cd $SCRIPT_DIR
@@ -37,8 +37,9 @@ mkdir -v $VIESTINTA_DIR
 cp -v ./files/viestinta.prod.env $VIESTINTA_DIR
 cp -v ./files/viestinta.dev.env $VIESTINTA_DIR
 
-# Copy the Systemd Unit file to correct location 
+# Copy the Systemd Unit files to correct location 
 cp -v ./files/viestinta-docker.service /lib/systemd/system/
+cp -v ./files/viestinta-docker-dev.service /lib/systemd/system/
 
 # Reload Systemd daemon
 systemctl daemon-reload
