@@ -14,6 +14,7 @@ Future implementations:
 ```
 - Config for NGINX
 - NGINX in Docker?
+- ngx_pagespeed, fixed with Docker or compile from source?
 - Letsencrypt/certs should be configured manually?
 - Anything to configure pulling/updating from prod and dev branches,
 should be handled by Drone, but maybe there should be a script for 'deploying'?

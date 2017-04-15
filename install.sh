@@ -34,8 +34,8 @@ cd $SCRIPT_DIR
 mkdir -v $VIESTINTA_DIR
 
 # Create environmentfiles
-cp -v ./files/viestinta.prod.env /etc/viestinta/
-cp -v ./files/viestinta.dev.env /etc/viestinta/
+cp -v ./files/viestinta.prod.env $VIESTINTA_DIR
+cp -v ./files/viestinta.dev.env $VIESTINTA_DIR
 
 # Copy the Systemd Unit file to correct location 
 cp -v ./files/viestinta-docker.service /lib/systemd/system/
