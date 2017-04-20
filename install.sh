@@ -21,13 +21,13 @@ mkdir -pv $DEV_DIR
 
 # Clone GitHub repo to prod directory
 cd $PROD_DIR
+rm -rfv $PROD_DIR/viestinta
 git clone -b $GIT_PROD_BRANCH $GIT_REPO
-git pull
 
 # Clone GitHub repo to prod directory
 cd $DEV_DIR
+rm -rfv $DEV_DIR/viestinta
 git clone -b $GIT_DEV_BRANCH $GIT_REPO
-git pull
 
 # Return to script directory
 cd $SCRIPT_DIR
