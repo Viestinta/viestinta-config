@@ -13,25 +13,27 @@ VIESTINTA_DIR=/etc/viestinta
 # Viestinta install script
 
 # Create git directory
-mkdir -v $GIT_DIR
+mkdir -pv $GIT_DIR
 
 # Create prod and dev directories
-mkdir -v $PROD_DIR
-mkdir -v $DEV_DIR
+mkdir -pv $PROD_DIR
+mkdir -pv $DEV_DIR
 
 # Clone GitHub repo to prod directory
 cd $PROD_DIR
 git clone -b $GIT_PROD_BRANCH $GIT_REPO
+git pull
 
 # Clone GitHub repo to prod directory
 cd $DEV_DIR
 git clone -b $GIT_DEV_BRANCH $GIT_REPO
+git pull
 
 # Return to script directory
 cd $SCRIPT_DIR
 
 # Create Viestinta system directory
-mkdir -v $VIESTINTA_DIR
+mkdir -pv $VIESTINTA_DIR
 
 # Create environmentfiles
 cp -v ./files/viestinta.prod.env $VIESTINTA_DIR
