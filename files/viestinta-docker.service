@@ -6,8 +6,8 @@ After=docker.service
 [Service]
 Restart=always
 EnvironmentFile=/etc/viestinta/viestinta.prod.env
-ExecStart=/usr/bin/docker-compose -f /git/prod/viestinta/docker-compose.prod.yml up
-ExecStop=/usr/bin/docker-compose -f /git/prod/viestinta/docker-compose.prod.yml stop
+ExecStart=/usr/local/bin/docker-compose -f /git/prod/viestinta/docker-compose.prod.yml up
+ExecStop=/usr/local/bin/docker-compose -f /git/prod/viestinta/docker-compose.prod.yml stop
 
 [Install]
 WantedBy=multi-user.target
